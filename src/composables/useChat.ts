@@ -6,23 +6,22 @@ export function useChat() {
   const messages = ref<ChatMessage[]>([]);
   const loading = ref(false);
 
-  async function sendMessage(text: string) {
-    messages.value.push({ role: "user", text });
+  async function send(text: string) {
+    messages.value.push({ role: "user", content: text });
     loading.value = true;
 
     try {
-      const data = await sendToAI(text);
-      const aiText = data?.choices?.[0]?.message?.content ?? "No response";
-
-      messages.value.push({ role: "ai", text: aiText });
+      const reply = await sendToAI(text);
+      messages.value.push({ role: "assistant", content: reply });
+    } catch {
+      messages.value.push({
+        role: "assistant",
+        content: "⚠️ Failed to reach AI",
+      });
     } finally {
       loading.value = false;
     }
   }
 
-  return {
-    messages,
-    loading,
-    sendMessage,
-  };
+  return { messages, loading, send };
 }

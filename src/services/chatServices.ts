@@ -1,6 +1,6 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function sendToAI(message: string) {
+export async function sendToAI(message: string): Promise<string> {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -8,8 +8,10 @@ export async function sendToAI(message: string) {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch AI response");
+    throw new Error("AI request failed");
   }
 
-  return res.json();
+  const data = await res.json();
+
+  return data.choices[0].message.content;
 }
