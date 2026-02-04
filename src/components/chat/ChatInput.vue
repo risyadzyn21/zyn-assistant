@@ -1,9 +1,7 @@
 <script setup lang="ts">
   import { ref } from "vue";
 
-  const emit = defineEmits<{
-    (e: "send", message: string): void;
-  }>();
+  const emit = defineEmits<{ send: [message: string] }>();
 
   const input = ref<string>("");
 
@@ -16,7 +14,7 @@
 </script>
 
 <template>
-  <div class="chat-input">
+  <div class="chat-input panel">
     <input
       v-model="input"
       type="text"
@@ -32,34 +30,11 @@
   .chat-input {
     display: flex;
     gap: 8px;
-    padding: 12px;
-    border-top: 1px solid #eee;
+    padding: 10px;
   }
 
   .chat-input input {
     flex: 1;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    outline: none;
-    font-size: 14px;
-  }
-
-  .chat-input input:focus {
-    border-color: #4f46e5;
-  }
-
-  .chat-input button {
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .chat-input button:hover {
-    opacity: 0.9;
+    width: 100%;
   }
 </style>
