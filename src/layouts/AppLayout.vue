@@ -1,9 +1,15 @@
 <script setup lang="ts">
-  import ChatWindow from "@/components/chat/ChatWindow.vue";
+  import AppHeader from "@/components/layout/AppHeader.vue";
 </script>
 
 <template>
-  <ChatWindow />
+  <div class="layout">
+    <AppHeader />
+
+    <main class="content">
+      <slot />
+    </main>
+  </div>
 </template>
 
 <style scoped>
@@ -12,12 +18,13 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
+    gap: 12px;
   }
 
-  .chat-area {
+  .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    min-height: 0;
   }
 </style>

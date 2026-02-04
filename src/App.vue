@@ -1,7 +1,10 @@
 <script setup lang="ts">
+  import AppLayout from "@/layouts/AppLayout.vue";
   import ChatView from "@/views/ChatView.vue";
 </script>
 
 <template>
-  <ChatView />
+  <AppLayout>
+    <ChatView />
+  </AppLayout>
 </template>
