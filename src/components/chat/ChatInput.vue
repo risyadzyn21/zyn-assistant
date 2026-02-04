@@ -33,7 +33,6 @@
     padding: 10px;
   }
 
-  /* 🔥 THIS is the fix */
   .chat-input input {
     flex: 1;
     width: 100%;

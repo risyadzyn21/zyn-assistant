@@ -38,7 +38,7 @@
   .messages {
     position: relative;
     flex: 1;
-    overflow: hidden; /* important */
+    overflow: hidden;
     border-radius: var(--radius);
 
     background: var(--panel-glass);
@@ -67,7 +67,6 @@
     background: linear-gradient(to top, rgba(240, 240, 240, 1), transparent);
   }
 
-  /* actual scroll area */
   .scroll {
     height: 100%;
     overflow-y: auto;
@@ -78,7 +77,6 @@
     gap: 12px;
   }
 
-  /* glass effect */
   .window,
   .messages {
     background: var(--panel-glass);

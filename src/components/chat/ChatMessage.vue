@@ -28,14 +28,12 @@
     word-break: break-word;
   }
 
-  /* assistant bubble */
   .assistant {
     background: rgba(255, 255, 255, 0.65);
     color: #111827;
     align-self: flex-start;
   }
 
-  /* user bubble */
   .user {
     background: rgba(17, 24, 39, 0.85);
     color: #f9fafb;
