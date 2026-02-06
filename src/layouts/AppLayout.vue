@@ -14,7 +14,7 @@
 
 <style scoped>
   .layout {
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     padding: 16px;
